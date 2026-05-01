@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Database, Zap, Layers, Lock, Terminal, Activity, ArrowRight, BookOpen, Code, TerminalSquare } from 'lucide-react';
+import { Database, Zap, Layers, Lock, Terminal, Activity, BookOpen, Code, TerminalSquare } from 'lucide-react';
 
 const BackgroundMesh = () => (
   <div className="fixed inset-0 w-screen h-screen -z-10 overflow-hidden" style={{ background: 'radial-gradient(circle at 50% 0%, #15152a 0%, #0B0B14 70%)' }}>
@@ -130,6 +130,7 @@ const LandingPage = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     if (location.hash === '#features') {
       const el = document.getElementById('features');
@@ -211,7 +212,7 @@ const DocumentationPage = () => {
               <li key={link.id}>
                 <a 
                   href={`#${link.id}`} 
-                  className="text-brand-muted hover:text-brand-primary transition-colors block"
+                  className={`transition-colors block ${activeSection === link.id ? 'text-brand-primary font-bold' : 'text-brand-muted hover:text-brand-primary'}`}
                   onClick={() => setActiveSection(link.id)}
                 >
                   {link.label}
