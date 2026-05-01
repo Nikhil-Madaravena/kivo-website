@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.VERCEL ? '/' : '/kivo-website/',
   build: {
-    outDir: process.env.VERCEL ? 'dist' : '../docs',
+    outDir: 'dist',
     emptyOutDir: true
   }
 })
