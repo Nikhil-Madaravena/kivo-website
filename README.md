@@ -14,7 +14,6 @@ This is the source code for the official Kivo In-Memory Database showcase websit
 To run the website locally:
 
 ```bash
-cd website
 npm install
 npm run dev
 ```
@@ -24,6 +23,5 @@ The production build is configured to output to the `docs/` folder, which is str
 
 To build:
 ```bash
-cd website
 npm run build
 ```
